@@ -1,5 +1,6 @@
 # toggleAnimate
 基于Animate.css、zepto.js/jQoery的css动画切换组件。
+[https://issaxite.github.io/lib/toggleAnimate/](https://issaxite.github.io/lib/toggleAnimate/)
 
 # 目的
 - 解决两个不同Animate.css的连贯使用；
