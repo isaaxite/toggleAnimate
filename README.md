@@ -7,7 +7,7 @@
 - 解决两个Animate切换过慢的问题（Animate.css动画默认是1000ms完成）。
 
 # 例子
-```
+```js
 var $text = $("#animationSandbox"),
     $testBtn = $("#test")
     $enterClass = $("#enterClass select"),
