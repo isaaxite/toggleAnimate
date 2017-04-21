@@ -7,6 +7,19 @@
 - 解决两个Animate切换过慢的问题（Animate.css动画默认是1000ms完成）。
 
 # 例子
+- 最简单例子
+```js
+var $text = $("#animationSandbox");
+
+$testBtn.on('click', function(){
+  var enterClass = "bounceOutLeft";
+
+  $text.toggleAnimate({
+    enterClass: enterClass, // 首个动画
+  });
+});
+```
+- 修改切换时间，默认300ms
 ```js
 var $text = $("#animationSandbox"),
     $testBtn = $("#test")
@@ -30,6 +43,20 @@ $testBtn.on('click', function(){
     },
     leaveClass: leaveClass, // 第二个动画
   });
+});
+```
+- 完成参数
+```js
+$ele.toggleAnimate({
+    delay: delay,   // 动画切换时间，缺省300ms，不应大于1000ms
+    enterClass: enterClass, // 首个动画类名
+    enterClassCallback: function(){ // 可选 
+        // 首个动画完成后回调 
+    },
+    callback: function(){   // 可选 
+        // 首个动画执行时回调 
+    },
+    leaveClass: leaveClass, // 可选 
 });
 ```
 
