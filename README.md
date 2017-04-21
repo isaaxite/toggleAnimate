@@ -1,6 +1,7 @@
 # toggleAnimate
-基于Animate.css、zepto.js/jQoery的css动画切换组件。
-[https://issaxite.github.io/lib/toggleAnimate/](https://issaxite.github.io/lib/toggleAnimate/)
+- 基于Animate.css、zepto.js/jQoery的css动画切换组件。
+
+- [https://issaxite.github.io/lib/toggleAnimate/](https://issaxite.github.io/lib/toggleAnimate/)
 
 # 目的
 - 解决两个不同Animate.css的连贯使用；
@@ -60,4 +61,7 @@ $ele.toggleAnimate({
     leaveClass: leaveClass, // 可选 
 });
 ```
+
+# 使用场景
+- 在编写轮播组件的时候，一般有多个轮播item。但是，使用该(小小)库，可以只是用item，然后在首个动画完成时（消失的时候），使用ViewModel对改item进行数据更新。
 
