@@ -10,7 +10,7 @@
 
 # 例子
 - 最简单例子  
-&nbsp;
+  
 **1.使用参数模式**
 ```js
 var animateClass = "bounceInRight";
@@ -43,17 +43,17 @@ var enterDeley = '0.5s',  //0.5 or 500 or 500ms
     leaveDelay = '0.5';
 
 $.fn.toggleAnimate({
-  enterDelay: enterDelay,
-  leaveDelay: leaveDelay,               // [可选]
-  enterClass: enterClass,               // [可选]
-  leaveClass: leaveClass,               // [可选]
-  enterCallback: function(){            // [可选]
+  enterDelay: enterDelay,               // [可选] 首个动画的执行时间
+  leaveDelay: leaveDelay,               // [可选] 第二个动画的执行时间
+  enterClass: enterClass,               // [必选] 首个动画类名
+  leaveClass: leaveClass,               // [可选] 第二个动画类名
+  enterCallback: function(){            // [可选] 首个动画执行前回调
     console.log('i am enterCallback');
   },
-  toggleCallback: function(){           // [可选]
+  toggleCallback: function(){           // [可选] 在首个动画完成与第二个动画开始前之间回调
     console.log('i am toggleCallback');
   },
-  leaveCallback: function(){            // [可选]  
+  leaveCallback: function(){            // [可选]  第二个动画完成后回调
     console.log('i am leaveCallback');
   }
 });
