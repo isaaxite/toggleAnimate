@@ -10,55 +10,51 @@
 
 # 例子
 - 最简单例子
+**1.使用参数模式**
 ```js
-var $text = $("#animationSandbox");
+var animateClass = "bounceInRight";
+$.fn.toggleAnimate(animateClass);
 
-$testBtn.on('click', function(){
-  var enterClass = "bounceOutLeft";
-
-  $text.toggleAnimate({
-    enterClass: enterClass, // 首个动画
-  });
+$.fn.toggleAnimate(animateClass, function(){
+  console.log('i am callback');
 });
 ```
-- 修改切换时间，默认300ms
+**2.使用对象模式**
 ```js
-var $text = $("#animationSandbox"),
-    $testBtn = $("#test")
-    $enterClass = $("#enterClass select"),
-    $leaveClass = $("#leaveClass select"),
-    $delay = $("#delay select");
-
-$testBtn.on('click', function(){
-  var enterClass = "bounceOutLeft",
-      leaveClass = "bounceInRight",
-      delay = 300;  
-
-  $text.toggleAnimate({
-    delay: delay, // 两个动画切换的延时
-    enterClass: enterClass, // 首个动画
-    enterClassCallback: function(){
-      // 首个动画完成时调用（1000ms后回调，延时由Animate.css的演示决定）
-    },
-    callback: function(){
-      // 首个动画执行时回调
-    },
-    leaveClass: leaveClass, // 第二个动画
-  });
+var animateClass = "bounceInRight";
+$.fn.toggleAnimate({
+  enterClass: 'bounceInRight'
 });
+
+$.fn.toggleAnimate({
+  enterClass: 'bounceInRight',
+  toggleCallback: function(){
+    console.log('i am callback');
+  }
+});
+*以上两种模式实现的效果是一样的*
 ```
-- 完成参数
+- 复杂的例子
 ```js
-$ele.toggleAnimate({
-    delay: delay,   // 动画切换时间，缺省300ms，不应大于1000ms
-    enterClass: enterClass, // 首个动画类名
-    enterClassCallback: function(){ // 可选 
-        // 首个动画完成后回调 
-    },
-    callback: function(){   // 可选 
-        // 首个动画执行时回调 
-    },
-    leaveClass: leaveClass, // 可选 
+var enterClass = "bounceOutRight",
+    leaveClass = "bounceInLeft";
+var enterDeley = '0.5s',  //0.5 or 500 or 500ms
+    leaveDelay = '0.5';
+
+$.fn.toggleAnimate({
+  enterDelay: enterDelay,
+  leaveDelay: leaveDelay,               // [可选]
+  enterClass: enterClass,               // [可选]
+  leaveClass: leaveClass,               // [可选]
+  enterCallback: function(){            // [可选]
+    console.log('i am enterCallback');
+  },
+  toggleCallback: function(){           // [可选]
+    console.log('i am toggleCallback');
+  },
+  leaveCallback: function(){            // [可选]  
+    console.log('i am leaveCallback');
+  }
 });
 ```
 
