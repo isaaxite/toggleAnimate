@@ -10,6 +10,7 @@
 
 # 例子
 - 最简单例子
+&nbsp;
 **1.使用参数模式**
 ```js
 var animateClass = "bounceInRight";
