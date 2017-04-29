@@ -9,9 +9,9 @@
 - 解决两个Animate切换过慢的问题（Animate.css动画默认是1000ms完成）。
 
 # 例子
-- 最简单例子  
+**1.最简单例子  **
   
-**1.使用参数模式**
+- 使用参数模式
 ```js
 var animateClass = "bounceInRight";
 $.fn.toggleAnimate(animateClass);
@@ -20,7 +20,7 @@ $.fn.toggleAnimate(animateClass, function(){
   console.log('i am callback');
 });
 ```
-**2.使用对象模式**
+- 使用对象模式
 ```js
 var animateClass = "bounceInRight";
 $.fn.toggleAnimate({
@@ -35,7 +35,7 @@ $.fn.toggleAnimate({
 });
 *以上两种模式实现的效果是一样的*
 ```
-- 复杂的例子
+**2.复杂的例子**
 ```js
 var enterClass = "bounceOutRight",
     leaveClass = "bounceInLeft";
@@ -53,7 +53,7 @@ $.fn.toggleAnimate({
   toggleCallback: function(){           // [可选] 在首个动画完成与第二个动画开始前之间回调
     console.log('i am toggleCallback');
   },
-  leaveCallback: function(){            // [可选]  第二个动画完成后回调
+  leaveCallback: function(){            // [可选] 第二个动画完成后回调
     console.log('i am leaveCallback');
   }
 });
